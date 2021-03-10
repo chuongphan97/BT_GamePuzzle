@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Puzzle</title>
+</head>
+<body id = "body" style="text-align: center;">
+    <button onclick="changeImg1(),doLight()" id="t1"><img src="img/car1_1.png" alt="c1" id="c1" ></button>
+        
+<br>  <br>
+
+    <button onclick="changeImg2(),doLight()" id="t2" ><img src="img/car3_2.png" alt="c2" id="c2" ></button>
+    
+
+<br> <br>
+    <button onclick="changeImg3(),doLight()" id="t3" ><img src="img/car1_3.png" alt="c3" id="c3" ></button>
+    
+
+<br> <br>
+    <button onclick="changeImg4(),doLight()" id="t4"><img src="img/car1_4.png" alt="c4" id="c4" ></button>
+    
+   
+<script>
+    let path = 'http://127.0.0.1:5500/';
+    function changeImg1(){
+    let i1 = document.getElementById('c1').src ;
+    
+    
+    switch(i1){
+        case (path + 'img/car1_1.png') :{
+            document.getElementById('c1').src =  "img/car2_1.png";
+        } break;
+        case (path + 'img/car2_1.png'):{
+            document.getElementById('c1').src = "img/car3_1.png";
+        } break;
+        case (path + 'img/car3_1.png'):{
+            document.getElementById('c1').src= "img/car1_1.png";
+        }break;
+    } }
+    
+    function changeImg2(){
+
+    let i2 = document.getElementById('c2').src;
+    
+    
+    switch(i2){
+        case (path + 'img/car1_2.png') :{
+            document.getElementById('c2').src =  "img/car2_2.png";
+        } break;
+        case (path + 'img/car2_2.png'):{
+            document.getElementById('c2').src = "img/car3_2.png";
+        } break;
+        case (path + 'img/car3_2.png'):{
+            document.getElementById('c2').src= "img/car1_2.png";
+        }break;
+    }}
+
+
+    function changeImg3(){
+
+let i3 = document.getElementById('c3').src;
+
+
+switch(i3){
+    case (path + 'img/car1_3.png') :{
+        document.getElementById('c3').src =  "img/car2_3.png";
+    } break;
+    case (path + 'img/car2_3.png'):{
+        document.getElementById('c3').src = "img/car3_3.png";
+    } break;
+    case (path + 'img/car3_3.png'):{
+        document.getElementById('c3').src= "img/car1_3.png";
+    }break;
+}}
+
+
+function changeImg4(){
+
+let i4 = document.getElementById('c4').src;
+
+
+switch(i4){
+    case (path + 'img/car1_4.png') :{
+        document.getElementById('c4').src =  "img/car2_4.png";
+    } break;
+    case (path + 'img/car2_4.png'):{
+        document.getElementById('c4').src = "img/car3_4.png";
+    } break;
+    case (path + 'img/car3_4.png'):{
+        document.getElementById('c4').src= "img/car1_4.png";
+    }break;
+}}
+
+    function doLight(){
+        if ( document.getElementById('c1').src == path +"img/car1_1.png" &&
+             document.getElementById('c2').src == path +"img/car1_2.png" &&
+             document.getElementById('c3').src == path +"img/car1_3.png" &&
+             document.getElementById('c4').src == path + "img/car1_4.png"
+              ) 
+              
+              { 
+                
+                 document.getElementById('t1').style.border = "5px solid red";
+                 document.getElementById('t2').style.border = "5px solid red";
+                 document.getElementById('t3').style.border = "5px solid red";
+                 document.getElementById('t4').style.border = "5px solid red";
+             } else if ( document.getElementById('c1').src == path +"img/car2_1.png" &&
+             document.getElementById('c2').src == path +"img/car2_2.png" &&
+             document.getElementById('c3').src == path +"img/car2_3.png" &&
+             document.getElementById('c4').src == path + "img/car2_4.png"
+              ) 
+              
+              { 
+                
+                 document.getElementById('t1').style.border = "5px solid red";
+                 document.getElementById('t2').style.border = "5px solid red";
+                 document.getElementById('t3').style.border = "5px solid red";
+                 document.getElementById('t4').style.border = "5px solid red";
+          
+             } else if ( document.getElementById('c1').src == path +"img/car3_1.png" &&
+             document.getElementById('c2').src == path +"img/car3_2.png" &&
+             document.getElementById('c3').src == path +"img/car3_3.png" &&
+             document.getElementById('c4').src == path + "img/car3_4.png"
+              ) { 
+                document.getElementById('t1').style.border = "5px solid red";
+                 document.getElementById('t2').style.border = "5px solid red";
+                 document.getElementById('t3').style.border = "5px solid red";
+                 document.getElementById('t4').style.border = "5px solid red";
+              }
+              
+              
+              else {
+                document.getElementById('t1').style.border = null;
+                document.getElementById('t2').style.border = null;
+                document.getElementById('t3').style.border = null;
+                document.getElementById('t4').style.border = null;
+             }
+              
+             
+             
+             
+             
+             
+             
+        
+             
+    }
+    
+
+
+    window.onload = doLight;
+
+        
+        
+       
+   
+</script>
+</body>
+</html>
